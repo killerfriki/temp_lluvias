@@ -4,6 +4,7 @@ import pandas as pd
 from dash import Dash, dcc, html, Input, Output
 import plotly.express as px
 import io
+import os
 
 
 # Base URLs para los archivos PDF de lluvias y temperaturas máximas
@@ -148,4 +149,5 @@ def update_graphs(selected_years):
     return rain_fig, temp_fig
 
 if __name__ == '__main__':
-    app.run_server(debug=True)
+    # Usa el puerto proporcionado por Render, o 8050 si no está disponible
+    app.run_server(debug=True, host='0.0.0.0', port=int(os.environ.get('PORT', 8050)))
