@@ -20,7 +20,7 @@ composite_states = [
 # Función para obtener y procesar datos desde los PDFs
 def obtener_datos_pronostico(url_base):
     all_data = []
-    for year in range(2000, 2025):
+    for year in range(2000, 2026):
         # Generar URL y realizar la solicitud GET
         url = f"{url_base}{year}.pdf"
         response = requests.get(url)
@@ -151,3 +151,4 @@ def update_graphs(selected_years):
 if __name__ == '__main__':
     # Usa el puerto proporcionado por Render, o 8050 si no está disponible
     app.run_server(debug=True, host='0.0.0.0', port=int(os.environ.get('PORT', 8050)))
+
