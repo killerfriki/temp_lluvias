@@ -149,8 +149,9 @@ def update_graphs(selected_years):
     return rain_fig, temp_fig
 
 if __name__ == '__main__':
-    # Usa el puerto proporcionado por Render, o 8050 si no está disponible
-    app.run(debug=False, port=5000, host='0.0.0.0')
+    port = int(os.environ.get("PORT", 8050))  # Usa el puerto de Render o 8050 en local
+    app.run(debug=False, host='0.0.0.0', port=port)
+
 
 
 
