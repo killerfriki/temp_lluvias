@@ -150,7 +150,8 @@ def update_graphs(selected_years):
 
 if __name__ == '__main__':
     # Usa el puerto proporcionado por Render, o 8050 si no está disponible
-    app.run(debug=True, host='0.0.0.0')
+    app.run(debug=False, port=5000, host='0.0.0.0')
+
 
 
 
